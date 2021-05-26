@@ -2,7 +2,7 @@ let express = require("express"),
   path = require("path"),
   mongoose = require("mongoose"),
   cors = require("cors"),
-  bodyParser = require("bodyParser"),
+  bodyParser = require("body-parser"),
   mongoDb = require("./database/db");
 
 mongoose.Promise = global.Promise;
@@ -36,7 +36,7 @@ app.use(cors());
 // Static directory path
 app.use(express.static(path.join(__dirname, "dist/")));
 // Base route
-app.get("/", (res, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
