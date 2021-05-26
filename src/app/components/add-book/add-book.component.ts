@@ -31,7 +31,7 @@ export class AddBookComponent implements OnInit {
       () => {
         console.log('Data added successfully');
         this.ngZone.run(() => {
-          this.router.navigateByUrl('/book-list');
+          this.router.navigateByUrl('/books-list');
         });
       },
       (error) => {

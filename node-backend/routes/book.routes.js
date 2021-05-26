@@ -5,7 +5,7 @@ const bookRoute = express.Router();
 let Book = require("../model/Book");
 
 // Add book
-bookRoute.route("./add-book").post((req, res, next) => {
+bookRoute.route("/add-book").post((req, res, next) => {
   Book.create(req.body, (error, data) => {
     if (error) {
       return next(error);

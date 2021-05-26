@@ -27,6 +27,7 @@ export class CrudService {
 
   AddBook(data: Book): Observable<any> {
     let API_URL = `${this.REST_API}/add-book`;
+    console.log({ API_URL });
     return this.httpClient
       .post(API_URL, data)
       .pipe(catchError(this.handleError));
