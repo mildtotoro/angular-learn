@@ -39,6 +39,7 @@ bookRoute.route("/read-book/:id").get((req, res) => {
 
 // Update book
 bookRoute.route("/update-book/:id").put((req, res, next) => {
+  console.log("/update-book/:id", req.params.id, req.body);
   Book.findByIdAndUpdate(
     req.params.id,
     {
@@ -47,7 +48,6 @@ bookRoute.route("/update-book/:id").put((req, res, next) => {
     (error, data) => {
       if (error) {
         console.log(error);
-
         return next(error);
       } else {
         res.json(data);
