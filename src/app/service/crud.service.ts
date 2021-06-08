@@ -22,7 +22,7 @@ export class CrudService {
   REST_API = 'http://localhost:8000/api';
 
   // Http header
-  httpHeaders = new HttpHeaders().set('Content-Type', 'application-json');
+  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private httpClient: HttpClient) {}
 
   AddBook(data: Book): Observable<any> {

@@ -1,8 +1,8 @@
 const express = require("express");
-const app = express();
+// const bodyParser = require("body-parser");
+let Book = require("../model/Book");
 
 const bookRoute = express.Router();
-let Book = require("../model/Book");
 
 // Add book
 bookRoute.route("/add-book").post((req, res, next) => {
